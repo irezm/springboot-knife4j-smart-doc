@@ -1,0 +1,14 @@
+{
+  "outPath": "src/main/resources/openapi",
+  "packageFilters": "cn.irez.doc.model.*,cn.irez.doc.controller.*",
+  "displayActualType":true,
+  "responseBodyAdvice":{
+    "className":"cn.irez.doc.api.Result"
+  },
+  "dataDictionaries": [{
+    "title": "http状态码字典",
+    "enumClassName": "cn.irez.doc.constant.HttpState",
+    "codeField": "code",
+    "descField": "msg"
+  }]
+}

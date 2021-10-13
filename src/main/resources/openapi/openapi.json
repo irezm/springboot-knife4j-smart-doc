@@ -1,0 +1,184 @@
+{
+  "components": {
+    "schemas": {
+      "_userInforequest": {},
+      "_userInfoByIdresponse": {
+        "properties": {
+          "code": {
+            "format": "int32",
+            "description": "状态码",
+            "type": "integer"
+          },
+          "success": {
+            "format": "boolean",
+            "description": "成功标识: true成功,false失败",
+            "type": "boolean"
+          },
+          "msg": {
+            "format": "string",
+            "description": "消息",
+            "type": "string"
+          },
+          "data": {
+            "description": "数据 (ActualType: User)(object)",
+            "type": "object",
+            "properties": {
+              "id": {
+                "format": "int64",
+                "description": "id",
+                "type": "integer"
+              },
+              "username": {
+                "format": "string",
+                "description": "用户名",
+                "type": "string"
+              },
+              "company": {
+                "format": "string",
+                "description": "公司",
+                "type": "string"
+              },
+              "mail": {
+                "format": "string",
+                "description": "邮箱",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "_userInforesponse": {
+        "properties": {
+          "code": {
+            "format": "int32",
+            "description": "状态码",
+            "type": "integer"
+          },
+          "success": {
+            "format": "boolean",
+            "description": "成功标识: true成功,false失败",
+            "type": "boolean"
+          },
+          "msg": {
+            "format": "string",
+            "description": "消息",
+            "type": "string"
+          },
+          "data": {
+            "description": "数据 (ActualType: List)",
+            "type": "array",
+            "items": {
+              "properties": {
+                "id": {
+                  "format": "int64",
+                  "description": "id",
+                  "type": "integer"
+                },
+                "username": {
+                  "format": "string",
+                  "description": "用户名",
+                  "type": "string"
+                },
+                "company": {
+                  "format": "string",
+                  "description": "公司",
+                  "type": "string"
+                },
+                "mail": {
+                  "format": "string",
+                  "description": "邮箱",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "_userInfoByIdrequest": {}
+    }
+  },
+  "servers": [
+    {
+      "url": ""
+    }
+  ],
+  "openapi": "3.0.3",
+  "paths": {
+    "/userInfo": {
+      "get": {
+        "summary": "获得用户对象",
+        "deprecated": false,
+        "description": "获得用户对象",
+        "tags": [
+          "User 用户接口"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/_userInforesponse"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"code\": 109,\n  \"success\": true,\n  \"msg\": \"ro27hi\",\n  \"data\": [\n    {\n      \"id\": 922,\n      \"username\": \"hilaria.reynolds\",\n      \"company\": \"Bartoletti and Sons\",\n      \"mail\": \"qag5nx\"\n    }\n  ]\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "a89ed4c666e7345f26de38c380586332",
+        "parameters": []
+      }
+    },
+    "/userInfoById": {
+      "get": {
+        "summary": "根据Id获得用户信息",
+        "deprecated": false,
+        "description": "根据Id获得用户信息",
+        "tags": [
+          "User 用户接口"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/_userInfoByIdresponse"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"code\": 927,\n  \"success\": true,\n  \"msg\": \"4j2w1w\",\n  \"data\": {\n    \"id\": 152,\n    \"username\": \"hilaria.reynolds\",\n    \"company\": \"Bartoletti and Sons\",\n    \"mail\": \"z07njc\"\n  }\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "8a723d2014d5224c14157f82ad9a8b90",
+        "parameters": [
+          {
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "in": "query",
+            "description": "用户Id",
+            "required": false,
+            "example": "705",
+            "name": "id"
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "百草味 - api文档",
+    "version": "1.0.0"
+  }
+}

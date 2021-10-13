@@ -1,0 +1,10 @@
+server:
+  port: 9090
+
+knife4j:
+  enableAggregation: true
+  disk:
+    enable: true
+    routes:
+      - name: 用户
+        location: classpath:openapi/openapi.json
