@@ -81,13 +81,6 @@
                     <configFile>./src/main/resources/smart-doc.json</configFile>
                     <projectName>百草味 - api文档</projectName>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>openapi</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

@@ -1,7 +1,10 @@
 {
+  "serverUrl": "http://127.0.0.1:9090",
   "outPath": "src/main/resources/openapi",
   "packageFilters": "cn.irez.doc.model.*,cn.irez.doc.controller.*",
-  "displayActualType":true,
+  "coverOld": true,
+  "allInOne": true,
+  "createDebugPage": true,
   "responseBodyAdvice":{
     "className":"cn.irez.doc.api.Result"
   },
@@ -10,5 +13,19 @@
     "enumClassName": "cn.irez.doc.constant.HttpState",
     "codeField": "code",
     "descField": "msg"
+  }],
+  "errorCodeDictionaries": [{
+    "title": "http状态码字典",
+    "enumClassName": "cn.irez.doc.constant.HttpState",
+    "codeField": "code",
+    "descField": "msg"
+  }],
+  "requestHeaders": [{
+    "name": "token",
+    "type": "string",
+    "desc": "desc",
+    "value":"leon",
+    "required": true,
+    "since": "-"
   }]
 }

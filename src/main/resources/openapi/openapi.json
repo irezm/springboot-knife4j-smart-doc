@@ -1,18 +1,27 @@
 {
   "components": {
     "schemas": {
+      "_classByIdUsernamerequest": {
+        "properties": {
+          "classId": {
+            "format": "int32",
+            "description": "班级Id",
+            "type": "integer"
+          },
+          "nameList": {
+            "description": "学生名称",
+            "type": "array",
+            "items": {}
+          }
+        }
+      },
       "_userInforequest": {},
-      "_userInfoByIdresponse": {
+      "_classByIdUsernameresponse": {
         "properties": {
           "code": {
             "format": "int32",
             "description": "状态码",
             "type": "integer"
-          },
-          "success": {
-            "format": "boolean",
-            "description": "成功标识: true成功,false失败",
-            "type": "boolean"
           },
           "msg": {
             "format": "string",
@@ -20,11 +29,69 @@
             "type": "string"
           },
           "data": {
-            "description": "数据 (ActualType: User)(object)",
+            "description": "数据(object)",
+            "type": "object",
+            "properties": {
+              "classId": {
+                "format": "int32",
+                "description": "班级Id",
+                "type": "integer"
+              },
+              "className": {
+                "format": "string",
+                "description": "班级名称",
+                "type": "string"
+              },
+              "userList": {
+                "description": "班级学生,你就假装是学生呗",
+                "type": "array",
+                "items": {
+                  "properties": {
+                    "id": {
+                      "format": "int32",
+                      "description": "id",
+                      "type": "integer"
+                    },
+                    "username": {
+                      "format": "string",
+                      "description": "用户名",
+                      "type": "string"
+                    },
+                    "company": {
+                      "format": "string",
+                      "description": "公司",
+                      "type": "string"
+                    },
+                    "mail": {
+                      "format": "string",
+                      "description": "邮箱",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "_userInfoByIdresponse": {
+        "properties": {
+          "code": {
+            "format": "int32",
+            "description": "状态码",
+            "type": "integer"
+          },
+          "msg": {
+            "format": "string",
+            "description": "消息",
+            "type": "string"
+          },
+          "data": {
+            "description": "数据(object)",
             "type": "object",
             "properties": {
               "id": {
-                "format": "int64",
+                "format": "int32",
                 "description": "id",
                 "type": "integer"
               },
@@ -54,23 +121,18 @@
             "description": "状态码",
             "type": "integer"
           },
-          "success": {
-            "format": "boolean",
-            "description": "成功标识: true成功,false失败",
-            "type": "boolean"
-          },
           "msg": {
             "format": "string",
             "description": "消息",
             "type": "string"
           },
           "data": {
-            "description": "数据 (ActualType: List)",
+            "description": "数据",
             "type": "array",
             "items": {
               "properties": {
                 "id": {
-                  "format": "int64",
+                  "format": "int32",
                   "description": "id",
                   "type": "integer"
                 },
@@ -99,7 +161,7 @@
   },
   "servers": [
     {
-      "url": ""
+      "url": "http://127.0.0.1:9090"
     }
   ],
   "openapi": "3.0.3",
@@ -123,7 +185,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"code\": 109,\n  \"success\": true,\n  \"msg\": \"ro27hi\",\n  \"data\": [\n    {\n      \"id\": 922,\n      \"username\": \"hilaria.reynolds\",\n      \"company\": \"Bartoletti and Sons\",\n      \"mail\": \"qag5nx\"\n    }\n  ]\n}"
+                    "value": "{\n  \"code\": 705,\n  \"msg\": \"8kname\",\n  \"data\": [\n    {\n      \"id\": 90,\n      \"username\": \"ralph.thiel\",\n      \"company\": \"Bernier, Sawayn and McLaughlin\",\n      \"mail\": \"lnz4t6\"\n    }\n  ]\n}"
                   }
                 }
               }
@@ -131,7 +193,19 @@
           }
         },
         "operationId": "a89ed4c666e7345f26de38c380586332",
-        "parameters": []
+        "parameters": [
+          {
+            "schema": {
+              "format": "string",
+              "type": "string"
+            },
+            "in": "header",
+            "description": "desc",
+            "required": true,
+            "example": "leon",
+            "name": "token"
+          }
+        ]
       }
     },
     "/userInfoById": {
@@ -153,7 +227,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"code\": 927,\n  \"success\": true,\n  \"msg\": \"4j2w1w\",\n  \"data\": {\n    \"id\": 152,\n    \"username\": \"hilaria.reynolds\",\n    \"company\": \"Bartoletti and Sons\",\n    \"mail\": \"z07njc\"\n  }\n}"
+                    "value": "{\n  \"code\": 410,\n  \"msg\": \"45r9is\",\n  \"data\": {\n    \"id\": 392,\n    \"username\": \"ralph.thiel\",\n    \"company\": \"Bernier, Sawayn and McLaughlin\",\n    \"mail\": \"7tuzv6\"\n  }\n}"
                   }
                 }
               }
@@ -170,8 +244,76 @@
             "in": "query",
             "description": "用户Id",
             "required": false,
-            "example": "705",
+            "example": "838",
             "name": "id"
+          },
+          {
+            "schema": {
+              "format": "string",
+              "type": "string"
+            },
+            "in": "header",
+            "description": "desc",
+            "required": true,
+            "example": "leon",
+            "name": "token"
+          }
+        ]
+      }
+    },
+    "/classByIdUsername": {
+      "post": {
+        "summary": "根据班级Id,与学生名称获得数据",
+        "deprecated": false,
+        "description": "根据班级Id,与学生名称获得数据",
+        "tags": [
+          "User 用户接口"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json; charset\u003dutf-8": {
+              "schema": {
+                "$ref": "#/components/schemas/_classByIdUsernamerequest"
+              },
+              "examples": {
+                "json": {
+                  "summary": "test data",
+                  "value": "{\n  \"classId\": 824,\n  \"nameList\": [\n    \"mvdj95\"\n  ]\n}"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/_classByIdUsernameresponse"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\n  \"code\": 282,\n  \"msg\": \"zyhlze\",\n  \"data\": {\n    \"classId\": 411,\n    \"className\": \"ralph.thiel\",\n    \"userList\": [\n      {\n        \"id\": 409,\n        \"username\": \"ralph.thiel\",\n        \"company\": \"Bernier, Sawayn and McLaughlin\",\n        \"mail\": \"umxhxu\"\n      }\n    ]\n  }\n}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "31dfcbd907272faabaaf101030489f8c",
+        "parameters": [
+          {
+            "schema": {
+              "format": "string",
+              "type": "string"
+            },
+            "in": "header",
+            "description": "desc",
+            "required": true,
+            "example": "leon",
+            "name": "token"
           }
         ]
       }
