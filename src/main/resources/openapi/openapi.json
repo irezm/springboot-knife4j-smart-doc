@@ -185,7 +185,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"code\": 705,\n  \"msg\": \"8kname\",\n  \"data\": [\n    {\n      \"id\": 90,\n      \"username\": \"ralph.thiel\",\n      \"company\": \"Bernier, Sawayn and McLaughlin\",\n      \"mail\": \"lnz4t6\"\n    }\n  ]\n}"
+                    "value": "{\n  \"code\": 714,\n  \"msg\": \"rov5nr\",\n  \"data\": [\n    {\n      \"id\": 15,\n      \"username\": \"malcolm.sawayn\",\n      \"company\": \"Bednar-Kshlerin\",\n      \"mail\": \"ttpsiv\"\n    }\n  ]\n}"
                   }
                 }
               }
@@ -227,7 +227,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"code\": 410,\n  \"msg\": \"45r9is\",\n  \"data\": {\n    \"id\": 392,\n    \"username\": \"ralph.thiel\",\n    \"company\": \"Bernier, Sawayn and McLaughlin\",\n    \"mail\": \"7tuzv6\"\n  }\n}"
+                    "value": "{\n  \"code\": 733,\n  \"msg\": \"ef9a12\",\n  \"data\": {\n    \"id\": 861,\n    \"username\": \"malcolm.sawayn\",\n    \"company\": \"Bednar-Kshlerin\",\n    \"mail\": \"k54d7l\"\n  }\n}"
                   }
                 }
               }
@@ -244,7 +244,7 @@
             "in": "query",
             "description": "用户Id",
             "required": false,
-            "example": "838",
+            "example": "625",
             "name": "id"
           },
           {
@@ -278,7 +278,7 @@
               "examples": {
                 "json": {
                   "summary": "test data",
-                  "value": "{\n  \"classId\": 824,\n  \"nameList\": [\n    \"mvdj95\"\n  ]\n}"
+                  "value": "{\n  \"classId\": 576,\n  \"nameList\": [\n    \"yp6aup\"\n  ]\n}"
                 }
               }
             }
@@ -295,7 +295,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\n  \"code\": 282,\n  \"msg\": \"zyhlze\",\n  \"data\": {\n    \"classId\": 411,\n    \"className\": \"ralph.thiel\",\n    \"userList\": [\n      {\n        \"id\": 409,\n        \"username\": \"ralph.thiel\",\n        \"company\": \"Bernier, Sawayn and McLaughlin\",\n        \"mail\": \"umxhxu\"\n      }\n    ]\n  }\n}"
+                    "value": "{\n  \"code\": 625,\n  \"msg\": \"327n07\",\n  \"data\": {\n    \"classId\": 467,\n    \"className\": \"malcolm.sawayn\",\n    \"userList\": [\n      {\n        \"id\": 64,\n        \"username\": \"malcolm.sawayn\",\n        \"company\": \"Bednar-Kshlerin\",\n        \"mail\": \"zyw841\"\n      }\n    ]\n  }\n}"
                   }
                 }
               }

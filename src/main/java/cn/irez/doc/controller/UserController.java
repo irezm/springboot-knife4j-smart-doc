@@ -23,7 +23,7 @@ public class UserController {
 
     /**
      * 获得用户对象
-     * @return Result<List<User>>
+     * @return {@link Result<List<User>>}
      */
     @RequestMapping(value = "/userInfo",method = RequestMethod.GET)
     public Result<List<User>> userInfo(){
@@ -40,7 +40,7 @@ public class UserController {
     /**
      * 根据Id获得用户信息
      * @param id 用户Id
-     * @return Result<User>
+     * @return {@link Result<User>}
      */
     @RequestMapping(value = "/userInfoById",method = RequestMethod.GET)
     public Result<User> userInfoById(Long id){
@@ -56,7 +56,7 @@ public class UserController {
     /**
      * 根据班级Id,与学生名称获得数据
      * @param dto 筛选条件
-     * @return Result<UserVo>
+     * @return {@link Result<UserVo>}
      */
     @RequestMapping(value = "/classByIdUsername",method = RequestMethod.POST)
     public Result<UserVo> classByIdUsername(@RequestBody UserDto dto){
