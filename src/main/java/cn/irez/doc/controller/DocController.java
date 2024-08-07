@@ -53,7 +53,7 @@ public class DocController {
         String remoteHost = request.getRequestURL().toString().replace(request.getRequestURI(), "");
         JSONObject parse = new JSONObject();
         parse.set("configUrl", "/v3/api-docs/swagger-config");
-        parse.set("oauth2RedirectUrl", String.format("http://%s/swagger-ui/oauth2-redirect.html", remoteHost));
+        parse.set("oauth2RedirectUrl", String.format("%s/swagger-ui/oauth2-redirect.html", remoteHost));
         parse.set("url", "/v3/api-docs");
         parse.set("validatorUrl", "");
         return ResponseEntity.ok(parse);
