@@ -1,7 +1,6 @@
 package cn.irez.doc.controller;
 
 import cn.hutool.core.lang.Assert;
-import cn.hutool.core.util.NumberUtil;
 import cn.irez.doc.api.Result;
 import cn.irez.doc.model.User;
 import cn.irez.doc.model.dto.UserDto;
@@ -23,7 +22,6 @@ public class UserController {
 
     /**
      * 获得用户对象
-     * @return {@link Result<List<User>>}
      */
     @RequestMapping(value = "/userInfo",method = RequestMethod.GET)
     public Result<List<User>> userInfo(){
@@ -40,11 +38,10 @@ public class UserController {
     /**
      * 根据Id获得用户信息
      * @param id 用户Id
-     * @return {@link Result<User>}
      */
     @RequestMapping(value = "/userInfoById",method = RequestMethod.GET)
     public Result<User> userInfoById(Long id){
-        Assert.isTrue(NumberUtil.equals(id,1L),"用户不存在!");
+        Assert.isTrue(List.of(1L,2L).contains(id),"用户不存在!");
         User user = new User();
         user.setId(1);
         user.setUsername("Leon·Lan");
@@ -56,7 +53,6 @@ public class UserController {
     /**
      * 根据班级Id,与学生名称获得数据
      * @param dto 筛选条件
-     * @return {@link Result<UserVo>}
      */
     @RequestMapping(value = "/classByIdUsername",method = RequestMethod.POST)
     public Result<UserVo> classByIdUsername(@RequestBody UserDto dto){

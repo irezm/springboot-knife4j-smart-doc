@@ -2,12 +2,12 @@ package cn.irez.doc.exception;
 
 import cn.irez.doc.api.Result;
 import cn.irez.doc.constant.HttpState;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 自定义全局异常处理
@@ -33,7 +33,7 @@ public class ExceptionHandle {
     //全局异常拦截
     @ExceptionHandler(value = Exception.class)
     public Result<?> handle(HttpServletRequest request, Exception exception) {
-        log.error("全局异常拦截----requestUrl :{} method:{} message:{} exception:{}" ,request.getRequestURI(), request.getMethod() , exception.getMessage(), exception);
+        log.error("全局异常拦截----requestUrl :{} method:{} message:{}" ,request.getRequestURI(), request.getMethod() , exception.getMessage(), exception);
         return Result.error(HttpStatus.INTERNAL_SERVER_ERROR.value(), HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
     }
 
