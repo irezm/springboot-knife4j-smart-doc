@@ -1,287 +1,31 @@
 {
-  "components": {
-    "schemas": {
-      "ResultListUser_response": {
-        "properties": {
-          "code": {
-            "format": "int32",
-            "description": "状态码",
-            "type": "integer",
-            "example": "0"
-          },
-          "msg": {
-            "format": "string",
-            "description": "消息",
-            "type": "string",
-            "example": ""
-          },
-          "data": {
-            "description": "数据",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/User_response"
-            }
-          }
-        }
-      },
-      "string": {
-        "format": "string",
-        "type": "string"
-      },
-      "HttpStatusCode_response": {
-        "properties": {
-          "5xxServerError": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "1xxInformational": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "2xxSuccessful": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "3xxRedirection": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "4xxClientError": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "error": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          }
-        }
-      },
-      "ResponseEntityJSONObject_response": {
-        "properties": {
-          "headers": {
-            "description": "No comments found.(object)",
-            "type": "object",
-            "$ref": "#/components/schemas/HttpHeaders_response"
-          },
-          "body": {
-            "description": "No comments found.(object)",
-            "type": "object"
-          },
-          "status": {
-            "description": "No comments found.(object)",
-            "type": "object",
-            "$ref": "#/components/schemas/HttpStatusCode_response"
-          }
-        }
-      },
-      "HttpHeaders_response": {
-        "properties": {
-          "headers": {
-            "description": "No comments found.(object)",
-            "type": "object"
-          }
-        }
-      },
-      "User_response": {
-        "properties": {
-          "id": {
-            "format": "int32",
-            "description": "id",
-            "type": "integer",
-            "example": "0"
-          },
-          "username": {
-            "format": "string",
-            "description": "用户名",
-            "type": "string",
-            "example": ""
-          },
-          "company": {
-            "format": "string",
-            "description": "公司",
-            "type": "string",
-            "example": ""
-          },
-          "mail": {
-            "format": "string",
-            "description": "邮箱",
-            "type": "string",
-            "example": ""
-          }
-        }
-      },
-      "ResultUser_response": {
-        "properties": {
-          "code": {
-            "format": "int32",
-            "description": "状态码",
-            "type": "integer",
-            "example": "0"
-          },
-          "msg": {
-            "format": "string",
-            "description": "消息",
-            "type": "string",
-            "example": ""
-          },
-          "data": {
-            "description": "数据(object)",
-            "type": "object",
-            "$ref": "#/components/schemas/User_response"
-          }
-        }
-      },
-      "UserVo_response": {
-        "properties": {
-          "classId": {
-            "format": "int32",
-            "description": "班级Id",
-            "type": "integer",
-            "example": "0"
-          },
-          "className": {
-            "format": "string",
-            "description": "班级名称",
-            "type": "string",
-            "example": ""
-          },
-          "userList": {
-            "description": "班级学生,你就假装是学生呗",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/User_response"
-            }
-          }
-        }
-      },
-      "ResultUserVo_response": {
-        "properties": {
-          "code": {
-            "format": "int32",
-            "description": "状态码",
-            "type": "integer",
-            "example": "0"
-          },
-          "msg": {
-            "format": "string",
-            "description": "消息",
-            "type": "string",
-            "example": ""
-          },
-          "data": {
-            "description": "数据(object)",
-            "type": "object",
-            "$ref": "#/components/schemas/UserVo_response"
-          }
-        }
-      },
-      "ResultResponseEntityJSONObject_response": {
-        "properties": {
-          "code": {
-            "format": "int32",
-            "description": "状态码",
-            "type": "integer",
-            "example": "0"
-          },
-          "msg": {
-            "format": "string",
-            "description": "消息",
-            "type": "string",
-            "example": ""
-          },
-          "data": {
-            "description": "数据(object)",
-            "type": "object",
-            "$ref": "#/components/schemas/ResponseEntityJSONObject_response"
-          }
-        }
-      },
-      "UserDto_request": {
-        "properties": {
-          "classId": {
-            "format": "int32",
-            "description": "班级Id",
-            "type": "integer",
-            "example": "0"
-          },
-          "nameList": {
-            "description": "学生名称",
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "example": ","
-          }
-        }
-      }
-    }
+  "openapi": "3.1.0",
+  "info": {
+    "title": "springboot-knife4j-smart-doc",
+    "version": "v1.0.0"
   },
   "servers": [
     {
       "url": "http://127.0.0.1:9090"
     }
   ],
-  "openapi": "3.0.3",
-  "paths": {
-    "/v3/api-docs": {
-      "get": {
-        "summary": "获取API文档",
-        "deprecated": false,
-        "tags": [
-          "开放平台-相关接口"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/ResultResponseEntityJSONObject_response"
-                },
-                "examples": {
-                  "json": {
-                    "summary": "test data",
-                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"5xxServerError\":true,\"1xxInformational\":true,\"2xxSuccessful\":true,\"3xxRedirection\":true,\"4xxClientError\":true,\"error\":true}}}"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "operationId": "v3-api-docs-GET",
-        "parameters": [
-          {
-            "schema": {
-              "format": "string",
-              "type": "string"
-            },
-            "in": "header",
-            "description": "desc",
-            "required": true,
-            "example": "leon",
-            "name": "token"
-          }
-        ]
-      }
+  "tags": [
+    {
+      "name": "DocController",
+      "description": "开放平台-相关接口"
     },
+    {
+      "name": "UserController",
+      "description": "User 用户接口"
+    }
+  ],
+  "paths": {
     "/userInfo": {
       "get": {
         "summary": "获得用户对象",
         "deprecated": false,
         "tags": [
-          "User 用户接口"
+          "UserController"
         ],
         "responses": {
           "200": {
@@ -289,7 +33,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResultListUser_response"
+                  "$ref": "#/components/schemas/601c8f647266d9679b344574a0dba8dd"
                 },
                 "examples": {
                   "json": {
@@ -322,7 +66,7 @@
         "summary": "根据Id获得用户信息",
         "deprecated": false,
         "tags": [
-          "User 用户接口"
+          "UserController"
         ],
         "responses": {
           "200": {
@@ -330,7 +74,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResultUser_response"
+                  "$ref": "#/components/schemas/5c7e96f43dc60675892cb0523aef9dd5"
                 },
                 "examples": {
                   "json": {
@@ -352,6 +96,7 @@
             "in": "query",
             "description": "用户Id",
             "required": false,
+            "example": "0",
             "name": "id"
           },
           {
@@ -373,13 +118,13 @@
         "summary": "根据班级Id,与学生名称获得数据",
         "deprecated": false,
         "tags": [
-          "User 用户接口"
+          "UserController"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserDto_request"
+                "$ref": "#/components/schemas/606cd34de94cf1a72773183bfa6a1f02"
               },
               "examples": {
                 "json": {
@@ -396,7 +141,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResultUserVo_response"
+                  "$ref": "#/components/schemas/b0cca033e9589295e230dcc3451703bc"
                 },
                 "examples": {
                   "json": {
@@ -424,12 +169,12 @@
         ]
       }
     },
-    "/v3/api-docs/swagger-config": {
+    "/v3/api-docs": {
       "get": {
-        "summary": "获取openapi3 API文档",
+        "summary": "获取API文档",
         "deprecated": false,
         "tags": [
-          "开放平台-相关接口"
+          "DocController"
         ],
         "responses": {
           "200": {
@@ -437,12 +182,53 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResultResponseEntityJSONObject_response"
+                  "$ref": "#/components/schemas/893d988cf808aff90452e5b9aa04999d"
                 },
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"5xxServerError\":true,\"1xxInformational\":true,\"2xxSuccessful\":true,\"3xxRedirection\":true,\"4xxClientError\":true,\"error\":true}}}"
+                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"4xxClientError\":true,\"2xxSuccessful\":true,\"3xxRedirection\":true,\"5xxServerError\":true,\"1xxInformational\":true,\"error\":true}}}"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "v3-api-docs-GET",
+        "parameters": [
+          {
+            "schema": {
+              "format": "string",
+              "type": "string"
+            },
+            "in": "header",
+            "description": "desc",
+            "required": true,
+            "example": "leon",
+            "name": "token"
+          }
+        ]
+      }
+    },
+    "/v3/api-docs/swagger-config": {
+      "get": {
+        "summary": "获取openapi3 API文档",
+        "deprecated": false,
+        "tags": [
+          "DocController"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/893d988cf808aff90452e5b9aa04999d"
+                },
+                "examples": {
+                  "json": {
+                    "summary": "test data",
+                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"4xxClientError\":true,\"2xxSuccessful\":true,\"3xxRedirection\":true,\"5xxServerError\":true,\"1xxInformational\":true,\"error\":true}}}"
                   }
                 }
               }
@@ -466,18 +252,246 @@
       }
     }
   },
-  "info": {
-    "title": "springboot-knife4j-smart-doc",
-    "version": "1.0.0"
-  },
-  "tags": [
-    {
-      "name": "开放平台-相关接口",
-      "description": "开放平台-相关接口"
-    },
-    {
-      "name": "User 用户接口",
-      "description": "User 用户接口"
+  "components": {
+    "schemas": {
+      "95671bfe0023276185457997bc6f846d": {
+        "properties": {
+          "classId": {
+            "format": "int32",
+            "description": "班级Id",
+            "type": "integer",
+            "example": "0"
+          },
+          "className": {
+            "format": "string",
+            "description": "班级名称",
+            "type": "string"
+          },
+          "userList": {
+            "description": "班级学生,你就假装是学生呗",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/3659a394bfa095a25b0e460e7bc09586"
+            }
+          }
+        }
+      },
+      "b0cca033e9589295e230dcc3451703bc": {
+        "properties": {
+          "code": {
+            "format": "int32",
+            "description": "状态码",
+            "type": "integer",
+            "example": "0"
+          },
+          "msg": {
+            "format": "string",
+            "description": "消息",
+            "type": "string"
+          },
+          "data": {
+            "description": "数据(object)",
+            "$ref": "#/components/schemas/95671bfe0023276185457997bc6f846d"
+          }
+        }
+      },
+      "601c8f647266d9679b344574a0dba8dd": {
+        "properties": {
+          "code": {
+            "format": "int32",
+            "description": "状态码",
+            "type": "integer",
+            "example": "0"
+          },
+          "msg": {
+            "format": "string",
+            "description": "消息",
+            "type": "string"
+          },
+          "data": {
+            "description": "数据",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/600ea90aa35b1c7f1c7d27a7e41d57de"
+            }
+          }
+        }
+      },
+      "ffa622a3aa8ab7d888d3e8307e8da0ec": {
+        "properties": {
+          "4xxClientError": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "2xxSuccessful": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "3xxRedirection": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "5xxServerError": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "1xxInformational": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "error": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          }
+        }
+      },
+      "d751713988987e9331980363e24189ce": {},
+      "606cd34de94cf1a72773183bfa6a1f02": {
+        "properties": {
+          "classId": {
+            "format": "int32",
+            "description": "班级Id",
+            "type": "integer",
+            "example": "0"
+          },
+          "nameList": {
+            "description": "学生名称",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": "\"\"\",\"\"\""
+          }
+        }
+      },
+      "893d988cf808aff90452e5b9aa04999d": {
+        "properties": {
+          "code": {
+            "format": "int32",
+            "description": "状态码",
+            "type": "integer",
+            "example": "0"
+          },
+          "msg": {
+            "format": "string",
+            "description": "消息",
+            "type": "string"
+          },
+          "data": {
+            "description": "数据(object)",
+            "$ref": "#/components/schemas/1ad6b06bcdabdeedac3c43fc16c632bc"
+          }
+        }
+      },
+      "defaultPrimitive": {
+        "format": "string",
+        "type": "string"
+      },
+      "eaece96b2c52ac4ee0bafd3d72c1eb52": {
+        "properties": {
+          "headers": {
+            "description": "No comments found.(object)",
+            "type": "object"
+          }
+        }
+      },
+      "3659a394bfa095a25b0e460e7bc09586": {
+        "properties": {
+          "id": {
+            "format": "int32",
+            "description": "id",
+            "type": "integer",
+            "example": "0"
+          },
+          "username": {
+            "format": "string",
+            "description": "用户名",
+            "type": "string"
+          },
+          "company": {
+            "format": "string",
+            "description": "公司",
+            "type": "string"
+          },
+          "mail": {
+            "format": "string",
+            "description": "邮箱",
+            "type": "string"
+          }
+        }
+      },
+      "5c7e96f43dc60675892cb0523aef9dd5": {
+        "properties": {
+          "code": {
+            "format": "int32",
+            "description": "状态码",
+            "type": "integer",
+            "example": "0"
+          },
+          "msg": {
+            "format": "string",
+            "description": "消息",
+            "type": "string"
+          },
+          "data": {
+            "description": "数据(object)",
+            "$ref": "#/components/schemas/600ea90aa35b1c7f1c7d27a7e41d57de"
+          }
+        }
+      },
+      "600ea90aa35b1c7f1c7d27a7e41d57de": {
+        "properties": {
+          "id": {
+            "format": "int32",
+            "description": "id",
+            "type": "integer",
+            "example": "0"
+          },
+          "username": {
+            "format": "string",
+            "description": "用户名",
+            "type": "string"
+          },
+          "company": {
+            "format": "string",
+            "description": "公司",
+            "type": "string"
+          },
+          "mail": {
+            "format": "string",
+            "description": "邮箱",
+            "type": "string"
+          }
+        }
+      },
+      "1ad6b06bcdabdeedac3c43fc16c632bc": {
+        "properties": {
+          "headers": {
+            "description": "No comments found.(object)",
+            "$ref": "#/components/schemas/eaece96b2c52ac4ee0bafd3d72c1eb52"
+          },
+          "body": {
+            "description": "No comments found.(object)",
+            "type": "object"
+          },
+          "status": {
+            "description": "No comments found.(object)",
+            "$ref": "#/components/schemas/ffa622a3aa8ab7d888d3e8307e8da0ec"
+          }
+        }
+      }
     }
-  ]
+  }
 }
