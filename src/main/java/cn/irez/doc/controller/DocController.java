@@ -1,6 +1,6 @@
 package cn.irez.doc.controller;
 
-import cn.hutool.core.io.resource.ResourceUtil;
+import cn.hutool.core.io.FileUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,7 +29,8 @@ public class DocController {
     @GetMapping
     public ResponseEntity<JSONObject> apiDocs(HttpServletRequest request) {
         // 从resources目录下读取openapi.json文件(注意需要与smart-doc.json中配置的outPath一致)
-        String json = ResourceUtil.readUtf8Str("openapi/openapi.json");
+        //String json = ResourceUtil.readUtf8Str("openapi/openapi.json");
+        String json = FileUtil.readUtf8String("D:\\Documents\\Workspace\\springboot-knife4j-smart-doc\\src\\main\\resources\\openapi\\openapi.json");
         JSONObject parse = JSONUtil.parseObj(json);
 
         // 获得远程host 如https://irez.cn
@@ -41,6 +42,27 @@ public class DocController {
         if (parse.containsKey("host")) {
             parse.set("host", remoteHost);
         }
+        /*if (parse.containsKey("tags")) {
+            parse.getJSONArray("tags").forEach(tag -> {
+                // name与description一致
+                JSONObject tagJson = (JSONObject) tag;
+                // 替换paths->tags
+                if (parse.containsKey("paths")) {
+                    parse.getJSONObject("paths").forEach((path, pathValue) -> {
+                        JSONObject pathJson = (JSONObject) pathValue;
+                        if (pathJson.containsKey("tags")) {
+                            pathJson.getJSONArray("tags").forEach(tagName -> {
+                                if (tagJson.getStr("name").equals(tagName)) {
+                                    pathJson.getJSONArray("tags").set(0, tagJson.getStr("description"));
+                                }
+                            });
+                        }
+                    });
+                }
+                String name = tagJson.getStr("name");
+                tagJson.set("description", name);
+            });
+        }*/
         return ResponseEntity.ok(parse);
     }
 

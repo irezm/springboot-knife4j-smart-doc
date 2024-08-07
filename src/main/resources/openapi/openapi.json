@@ -182,12 +182,12 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/61c335731e65c700c30f524f0d248af2"
+                  "$ref": "#/components/schemas/26947af045a6a8c36676382d8d44f3db"
                 },
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"error\":true,\"3xxRedirection\":true,\"1xxInformational\":true,\"5xxServerError\":true,\"4xxClientError\":true,\"2xxSuccessful\":true}}}"
+                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"4xxClientError\":true,\"5xxServerError\":true,\"1xxInformational\":true,\"2xxSuccessful\":true,\"3xxRedirection\":true,\"error\":true}}}"
                   }
                 }
               }
@@ -223,12 +223,12 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/61c335731e65c700c30f524f0d248af2"
+                  "$ref": "#/components/schemas/26947af045a6a8c36676382d8d44f3db"
                 },
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"error\":true,\"3xxRedirection\":true,\"1xxInformational\":true,\"5xxServerError\":true,\"4xxClientError\":true,\"2xxSuccessful\":true}}}"
+                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"4xxClientError\":true,\"5xxServerError\":true,\"1xxInformational\":true,\"2xxSuccessful\":true,\"3xxRedirection\":true,\"error\":true}}}"
                   }
                 }
               }
@@ -254,6 +254,46 @@
   },
   "components": {
     "schemas": {
+      "20d147f4701cdf71a11f17b31a6204bd": {
+        "properties": {
+          "4xxClientError": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "5xxServerError": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "1xxInformational": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "2xxSuccessful": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "3xxRedirection": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "error": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          }
+        }
+      },
       "95671bfe0023276185457997bc6f846d": {
         "properties": {
           "classId": {
@@ -318,46 +358,6 @@
         }
       },
       "d751713988987e9331980363e24189ce": {},
-      "bb455b7b1f94603665d70b8546f7bc87": {
-        "properties": {
-          "error": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "3xxRedirection": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "1xxInformational": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "5xxServerError": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "4xxClientError": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "2xxSuccessful": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          }
-        }
-      },
       "606cd34de94cf1a72773183bfa6a1f02": {
         "properties": {
           "classId": {
@@ -385,6 +385,22 @@
           "headers": {
             "description": "No comments found.(object)",
             "type": "object"
+          }
+        }
+      },
+      "2549784d80e1b19874774c3c20294908": {
+        "properties": {
+          "headers": {
+            "description": "No comments found.(object)",
+            "$ref": "#/components/schemas/eaece96b2c52ac4ee0bafd3d72c1eb52"
+          },
+          "body": {
+            "description": "No comments found.(object)",
+            "type": "object"
+          },
+          "status": {
+            "description": "No comments found.(object)",
+            "$ref": "#/components/schemas/20d147f4701cdf71a11f17b31a6204bd"
           }
         }
       },
@@ -432,7 +448,7 @@
           }
         }
       },
-      "61c335731e65c700c30f524f0d248af2": {
+      "26947af045a6a8c36676382d8d44f3db": {
         "properties": {
           "code": {
             "format": "int32",
@@ -447,23 +463,7 @@
           },
           "data": {
             "description": "数据(object)",
-            "$ref": "#/components/schemas/0070dae531facd1c7f1c116fde410c55"
-          }
-        }
-      },
-      "0070dae531facd1c7f1c116fde410c55": {
-        "properties": {
-          "headers": {
-            "description": "No comments found.(object)",
-            "$ref": "#/components/schemas/eaece96b2c52ac4ee0bafd3d72c1eb52"
-          },
-          "body": {
-            "description": "No comments found.(object)",
-            "type": "object"
-          },
-          "status": {
-            "description": "No comments found.(object)",
-            "$ref": "#/components/schemas/bb455b7b1f94603665d70b8546f7bc87"
+            "$ref": "#/components/schemas/2549784d80e1b19874774c3c20294908"
           }
         }
       },

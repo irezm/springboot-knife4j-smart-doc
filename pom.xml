@@ -16,14 +16,10 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <skipTests>true</skipTests>
+        <destDir>${project.build.outputDirectory}/META-INF/resources/</destDir>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-openapi3-ui</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -52,12 +48,6 @@
             </dependency>
 
             <dependency>
-                <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-openapi3-ui</artifactId>
-                <version>4.5.0</version>
-            </dependency>
-
-            <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>5.8.27</version>
@@ -66,6 +56,12 @@
     </dependencyManagement>
 
     <build>
+        <resources>
+            <resource>
+                <targetPath>META-INF/resources/</targetPath>
+                <directory>${project.basedir}/src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>com.ly.smart-doc</groupId>
