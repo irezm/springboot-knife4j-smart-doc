@@ -94,7 +94,7 @@
               "type": "number"
             },
             "in": "query",
-            "description": "用户Id",
+            "description": "No comments found.",
             "required": false,
             "example": "0",
             "name": "id"
@@ -182,12 +182,12 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/893d988cf808aff90452e5b9aa04999d"
+                  "$ref": "#/components/schemas/61c335731e65c700c30f524f0d248af2"
                 },
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"4xxClientError\":true,\"2xxSuccessful\":true,\"3xxRedirection\":true,\"5xxServerError\":true,\"1xxInformational\":true,\"error\":true}}}"
+                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"error\":true,\"3xxRedirection\":true,\"1xxInformational\":true,\"5xxServerError\":true,\"4xxClientError\":true,\"2xxSuccessful\":true}}}"
                   }
                 }
               }
@@ -223,12 +223,12 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/893d988cf808aff90452e5b9aa04999d"
+                  "$ref": "#/components/schemas/61c335731e65c700c30f524f0d248af2"
                 },
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"4xxClientError\":true,\"2xxSuccessful\":true,\"3xxRedirection\":true,\"5xxServerError\":true,\"1xxInformational\":true,\"error\":true}}}"
+                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"error\":true,\"3xxRedirection\":true,\"1xxInformational\":true,\"5xxServerError\":true,\"4xxClientError\":true,\"2xxSuccessful\":true}}}"
                   }
                 }
               }
@@ -317,15 +317,10 @@
           }
         }
       },
-      "ffa622a3aa8ab7d888d3e8307e8da0ec": {
+      "d751713988987e9331980363e24189ce": {},
+      "bb455b7b1f94603665d70b8546f7bc87": {
         "properties": {
-          "4xxClientError": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "2xxSuccessful": {
+          "error": {
             "format": "boolean",
             "description": "No comments found.",
             "type": "boolean",
@@ -337,19 +332,25 @@
             "type": "boolean",
             "example": "true"
           },
-          "5xxServerError": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
           "1xxInformational": {
             "format": "boolean",
             "description": "No comments found.",
             "type": "boolean",
             "example": "true"
           },
-          "error": {
+          "5xxServerError": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "4xxClientError": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "2xxSuccessful": {
             "format": "boolean",
             "description": "No comments found.",
             "type": "boolean",
@@ -357,7 +358,6 @@
           }
         }
       },
-      "d751713988987e9331980363e24189ce": {},
       "606cd34de94cf1a72773183bfa6a1f02": {
         "properties": {
           "classId": {
@@ -373,25 +373,6 @@
               "type": "string"
             },
             "example": "\"\"\",\"\"\""
-          }
-        }
-      },
-      "893d988cf808aff90452e5b9aa04999d": {
-        "properties": {
-          "code": {
-            "format": "int32",
-            "description": "状态码",
-            "type": "integer",
-            "example": "0"
-          },
-          "msg": {
-            "format": "string",
-            "description": "消息",
-            "type": "string"
-          },
-          "data": {
-            "description": "数据(object)",
-            "$ref": "#/components/schemas/1ad6b06bcdabdeedac3c43fc16c632bc"
           }
         }
       },
@@ -451,6 +432,41 @@
           }
         }
       },
+      "61c335731e65c700c30f524f0d248af2": {
+        "properties": {
+          "code": {
+            "format": "int32",
+            "description": "状态码",
+            "type": "integer",
+            "example": "0"
+          },
+          "msg": {
+            "format": "string",
+            "description": "消息",
+            "type": "string"
+          },
+          "data": {
+            "description": "数据(object)",
+            "$ref": "#/components/schemas/0070dae531facd1c7f1c116fde410c55"
+          }
+        }
+      },
+      "0070dae531facd1c7f1c116fde410c55": {
+        "properties": {
+          "headers": {
+            "description": "No comments found.(object)",
+            "$ref": "#/components/schemas/eaece96b2c52ac4ee0bafd3d72c1eb52"
+          },
+          "body": {
+            "description": "No comments found.(object)",
+            "type": "object"
+          },
+          "status": {
+            "description": "No comments found.(object)",
+            "$ref": "#/components/schemas/bb455b7b1f94603665d70b8546f7bc87"
+          }
+        }
+      },
       "600ea90aa35b1c7f1c7d27a7e41d57de": {
         "properties": {
           "id": {
@@ -473,22 +489,6 @@
             "format": "string",
             "description": "邮箱",
             "type": "string"
-          }
-        }
-      },
-      "1ad6b06bcdabdeedac3c43fc16c632bc": {
-        "properties": {
-          "headers": {
-            "description": "No comments found.(object)",
-            "$ref": "#/components/schemas/eaece96b2c52ac4ee0bafd3d72c1eb52"
-          },
-          "body": {
-            "description": "No comments found.(object)",
-            "type": "object"
-          },
-          "status": {
-            "description": "No comments found.(object)",
-            "$ref": "#/components/schemas/ffa622a3aa8ab7d888d3e8307e8da0ec"
           }
         }
       }

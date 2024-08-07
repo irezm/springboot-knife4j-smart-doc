@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * User 用户接口
+ * @author lzm
  */
 @RequestMapping("/")
 @RestController
@@ -37,7 +38,6 @@ public class UserController {
 
     /**
      * 根据Id获得用户信息
-     * @param id 用户Id
      */
     @RequestMapping(value = "/userInfoById",method = RequestMethod.GET)
     public Result<User> userInfoById(Long id){
@@ -52,7 +52,6 @@ public class UserController {
 
     /**
      * 根据班级Id,与学生名称获得数据
-     * @param dto 筛选条件
      */
     @RequestMapping(value = "/classByIdUsername",method = RequestMethod.POST)
     public Result<UserVo> classByIdUsername(@RequestBody UserDto dto){
