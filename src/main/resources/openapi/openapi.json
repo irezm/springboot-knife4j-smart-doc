@@ -30,19 +30,7 @@
       },
       "HttpStatusCode_response": {
         "properties": {
-          "4xxClientError": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
           "5xxServerError": {
-            "format": "boolean",
-            "description": "No comments found.",
-            "type": "boolean",
-            "example": "true"
-          },
-          "2xxSuccessful": {
             "format": "boolean",
             "description": "No comments found.",
             "type": "boolean",
@@ -54,7 +42,19 @@
             "type": "boolean",
             "example": "true"
           },
+          "2xxSuccessful": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
           "3xxRedirection": {
+            "format": "boolean",
+            "description": "No comments found.",
+            "type": "boolean",
+            "example": "true"
+          },
+          "4xxClientError": {
             "format": "boolean",
             "description": "No comments found.",
             "type": "boolean",
@@ -253,7 +253,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"4xxClientError\":true,\"5xxServerError\":true,\"2xxSuccessful\":true,\"1xxInformational\":true,\"3xxRedirection\":true,\"error\":true}}}"
+                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"5xxServerError\":true,\"1xxInformational\":true,\"2xxSuccessful\":true,\"3xxRedirection\":true,\"4xxClientError\":true,\"error\":true}}}"
                   }
                 }
               }
@@ -426,7 +426,7 @@
     },
     "/v3/api-docs/swagger-config": {
       "get": {
-        "summary": "获取API文档",
+        "summary": "获取openapi3 API文档",
         "deprecated": false,
         "tags": [
           "开放平台-相关接口"
@@ -442,7 +442,7 @@
                 "examples": {
                   "json": {
                     "summary": "test data",
-                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"4xxClientError\":true,\"5xxServerError\":true,\"2xxSuccessful\":true,\"1xxInformational\":true,\"3xxRedirection\":true,\"error\":true}}}"
+                    "value": "{\"code\":0,\"msg\":\"\",\"data\":{\"headers\":Error restful return.,\"body\":{},\"status\":{\"5xxServerError\":true,\"1xxInformational\":true,\"2xxSuccessful\":true,\"3xxRedirection\":true,\"4xxClientError\":true,\"error\":true}}}"
                   }
                 }
               }

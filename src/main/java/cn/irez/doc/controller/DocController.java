@@ -35,18 +35,25 @@ public class DocController {
         // 获得远程host 如https://irez.cn
         String remoteHost = request.getRequestURL().toString().replace(request.getRequestURI(), "");
         // 替换servers->url
-        parse.getJSONArray("servers").getJSONObject(0).set("url", remoteHost);
+        if (parse.containsKey("servers")) {
+            parse.getJSONArray("servers").getJSONObject(0).set("url", remoteHost);
+        }
+        if (parse.containsKey("host")) {
+            parse.set("host", remoteHost);
+        }
         return ResponseEntity.ok(parse);
     }
 
     /**
-     * 获取API文档
+     * 获取openapi3 API文档
      */
     @GetMapping("/swagger-config")
-    public ResponseEntity<JSONObject> swaggerConfig() {
+    public ResponseEntity<JSONObject> swaggerConfig(HttpServletRequest request) {
+        // 获得远程host 如https://irez.cn
+        String remoteHost = request.getRequestURL().toString().replace(request.getRequestURI(), "");
         JSONObject parse = new JSONObject();
         parse.set("configUrl", "/v3/api-docs/swagger-config");
-        parse.set("oauth2RedirectUrl", "http://127.0.0.1:37001/swagger-ui/oauth2-redirect.html");
+        parse.set("oauth2RedirectUrl", String.format("http://%s/swagger-ui/oauth2-redirect.html", remoteHost));
         parse.set("url", "/v3/api-docs");
         parse.set("validatorUrl", "");
         return ResponseEntity.ok(parse);
